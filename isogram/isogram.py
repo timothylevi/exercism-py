@@ -2,12 +2,6 @@ import re
 
 def is_isogram(word):
     word = re.sub('[\W_]+', '', word).lower()
-    chars = set()
+    chars = set(word)
 
-    for char in word:
-        if char in chars:
-            return False
-
-        chars.add(char)
-
-    return True
+    return len(chars) == len(word)
