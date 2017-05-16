@@ -1,16 +1,13 @@
 import re
 
 def is_isogram(word):
-    if len(word) == 0:
-        return True
-
-    stash = {}
     word = re.sub('[\W_]+', '', word).lower()
+    chars = set()
 
     for char in word:
-        if stash.get(char):
+        if char in chars:
             return False
 
-        stash[char] = True
+        chars.add(char)
 
     return True
