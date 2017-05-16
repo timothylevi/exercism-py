@@ -1,10 +1,8 @@
-import re, string
+import re
 
 def is_pangram(sentence):
     sentence = re.sub('[\d\W_]+', '', sentence).lower()
-    alphabet = string.ascii_lowercase
-
     sentence_set = set(sentence)
-    alphabet_set = set(alphabet)
+    alphabet_length = 26
 
-    return len(sentence_set) == len(alphabet_set)
+    return len(sentence_set) == alphabet_length
