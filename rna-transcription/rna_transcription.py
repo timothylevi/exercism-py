@@ -11,6 +11,6 @@ def to_rna(sequence):
     with each DNA nucleotide replaced with it's complementary RNA nucleotide.
     """
     try:
-        return ''.join([COMPLEMENTS[nucleotide] for nucleotide in sequence])
+        return ''.join(COMPLEMENTS[nucleotide] for nucleotide in sequence)
     except KeyError as e:
         return ''
