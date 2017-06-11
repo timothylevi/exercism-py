@@ -5,8 +5,8 @@ def distance(strand1, strand2):
 
     differences = 0
 
-    for index, char in enumerate(strand1):
-        if char != strand2[index]:
+    for nucleotide1, nucleotide2 in zip(strand1, strand2):
+        if nucleotide1 != nucleotide2:
             differences += 1
 
     return differences
